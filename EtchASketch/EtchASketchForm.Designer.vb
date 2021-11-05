@@ -26,10 +26,10 @@ Partial Class EtchASketchForm
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SelectColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DrawWaveformsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SelectColorButton = New System.Windows.Forms.Button()
         Me.DrawWaveformsButton = New System.Windows.Forms.Button()
@@ -71,6 +71,24 @@ Partial Class EtchASketchForm
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(75, 36)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
+        'SelectColorToolStripMenuItem
+        '
+        Me.SelectColorToolStripMenuItem.Name = "SelectColorToolStripMenuItem"
+        Me.SelectColorToolStripMenuItem.Size = New System.Drawing.Size(329, 44)
+        Me.SelectColorToolStripMenuItem.Text = "Select Color"
+        '
+        'DrawWaveformsToolStripMenuItem
+        '
+        Me.DrawWaveformsToolStripMenuItem.Name = "DrawWaveformsToolStripMenuItem"
+        Me.DrawWaveformsToolStripMenuItem.Size = New System.Drawing.Size(329, 44)
+        Me.DrawWaveformsToolStripMenuItem.Text = "Draw Waveforms"
+        '
+        'ClearToolStripMenuItem
+        '
+        Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(329, 44)
+        Me.ClearToolStripMenuItem.Text = "Clear"
+        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
@@ -78,28 +96,10 @@ Partial Class EtchASketchForm
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(85, 36)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
-        'SelectColorToolStripMenuItem
-        '
-        Me.SelectColorToolStripMenuItem.Name = "SelectColorToolStripMenuItem"
-        Me.SelectColorToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
-        Me.SelectColorToolStripMenuItem.Text = "Select Color"
-        '
-        'DrawWaveformsToolStripMenuItem
-        '
-        Me.DrawWaveformsToolStripMenuItem.Name = "DrawWaveformsToolStripMenuItem"
-        Me.DrawWaveformsToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
-        Me.DrawWaveformsToolStripMenuItem.Text = "Draw Waveforms"
-        '
-        'ClearToolStripMenuItem
-        '
-        Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
-        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
-        Me.ClearToolStripMenuItem.Text = "Clear"
-        '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(214, 44)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'SelectColorButton
