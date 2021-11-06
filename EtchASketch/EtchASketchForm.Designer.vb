@@ -43,6 +43,7 @@ Partial Class EtchASketchForm
         '
         'PictureBox
         '
+        Me.PictureBox.BackColor = System.Drawing.SystemColors.Control
         Me.PictureBox.Location = New System.Drawing.Point(169, 88)
         Me.PictureBox.Name = "PictureBox"
         Me.PictureBox.Size = New System.Drawing.Size(867, 664)
@@ -102,7 +103,7 @@ Partial Class EtchASketchForm
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(214, 44)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(359, 44)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'SelectColorButton
@@ -151,6 +152,7 @@ Partial Class EtchASketchForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Red
         Me.ClientSize = New System.Drawing.Size(1267, 842)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)

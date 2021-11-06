@@ -10,26 +10,19 @@ Public Class EtchASketchForm
     Dim currentX As Integer = 0
     Dim currentY As Integer = 0
     Dim currentColor As Color = Color.Black
-    Dim backgroundColor As Color = Color.LightBlue
+    Dim backgroundColor As Color = Color.LightGray
 
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        Me.Close()
+    Private Sub EtchASketchForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PictureBox.BackColor = Me.backgroundColor
     End Sub
 
-
-
-
     Private Sub PictureBox_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox.MouseMove
-        'update position
 
         If e.Button.ToString = "Left" Then
             DrawLine(Me.currentX, Me.currentY, e.X, e.Y)
         End If
-
         Me.currentX = e.X
         Me.currentY = e.Y
-        Me.Text = $"({e.X},{e.Y}) Button:{e.Button}"
-
     End Sub
 
     Sub DrawLine(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer)
@@ -37,13 +30,6 @@ Public Class EtchASketchForm
         Dim pen As New Pen(Me.currentColor) 'Pen(Color.FromArgb(255, 0, 0, 0))
         g.DrawLine(pen, x1, y1, x2, y2)
         pen.Dispose()
-        g.Dispose()
-    End Sub
-
-    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-        ShakeErase()
-        Dim g As Graphics = PictureBox.CreateGraphics
-        g.Clear(Me.backgroundColor)
         g.Dispose()
     End Sub
 
@@ -59,19 +45,16 @@ Public Class EtchASketchForm
         Me.currentColor = ColorDialog.Color
     End Sub
 
-    Private Sub EtchASketchForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PictureBox.BackColor = Me.backgroundColor
+    Private Sub SelectColorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectColorToolStripMenuItem.Click
+        ColorDialog.ShowDialog()
+        Me.currentColor = ColorDialog.Color
     End Sub
 
-    Sub ShakeErase()
-        Dim offset As Integer = 50
-
-        For i = 1 To 16
-            offset *= -1
-            Me.Top += offset
-            Me.Left += offset
-            System.Threading.Thread.Sleep(150)
-        Next
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        ShakeErase()
+        Dim g As Graphics = PictureBox.CreateGraphics
+        g.Clear(Me.backgroundColor)
+        g.Dispose()
     End Sub
 
     Private Sub ClearToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearToolStripMenuItem.Click
@@ -81,12 +64,29 @@ Public Class EtchASketchForm
         g.Dispose()
     End Sub
 
-    Private Sub SelectColorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectColorToolStripMenuItem.Click
-        ColorDialog.ShowDialog()
-        Me.currentColor = ColorDialog.Color
+    Sub ShakeErase()
+        Dim offset As Integer = 50
+        For i = 1 To 16
+            offset *= -1
+            Me.Top += offset
+            Me.Left += offset
+            System.Threading.Thread.Sleep(150)
+        Next
+    End Sub
+
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Me.Close()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        MsgBox("Welcome to the Etcha-A-Sketch simulator!
+Draw on the gray box by pressing the left mouse button.
+Select a pen color by pressing the SelectColor button or by clicking the center mouse button.
+Erase the image by pressing the Clear button.
+Have fun!")
     End Sub
 End Class
