@@ -95,18 +95,42 @@ Have fun!")
         Dim g As Graphics = PictureBox.CreateGraphics
         Dim pen As New Pen(Me.currentColor)
         Dim previousX As Integer = 0
-        Dim previousY As Integer = 0
+        Dim previousY As Integer = 209
+        Dim pi As Double = 3.14159265
         currentX = 1
-        currentY = 1
-        For i = 0 To 200
+        For i = 0 To 399
+            currentY = 200 + CInt(200 * Math.Sin(2 * pi * 0.01 * currentX))
             g.DrawLine(pen, previousX, previousY, currentX, currentY)
-            previousX += 1
-            previousY += 1
+            previousX = currentX
+            previousY = currentY
             currentX += 1
-            currentY += 1
         Next
 
+        previousX = 0
+        previousY = 200
+        currentX = 1
+        pen.Color = Color.White
 
+        For i = 0 To 399
+            currentY = 200 + CInt(200 * Math.Cos(2 * pi * 0.01 * currentX))
+            g.DrawLine(pen, previousX, previousY, currentX, currentY)
+            previousX = currentX
+            previousY = currentY
+            currentX += 1
+        Next
+
+        previousX = 0
+        previousY = 200
+        currentX = 1
+        pen.Color = Color.Orange
+
+        For i = 0 To 399
+            currentY = 200 + CInt(200 * Math.Sin(2 * pi * 0.01 * currentX))
+            g.DrawLine(pen, previousX + 25, previousY, currentX + 25, currentY)
+            previousX = currentX
+            previousY = currentY
+            currentX += 1
+        Next
 
         pen.Dispose()
         g.Dispose()

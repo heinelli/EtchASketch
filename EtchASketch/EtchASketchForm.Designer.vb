@@ -46,7 +46,7 @@ Partial Class EtchASketchForm
         Me.PictureBox.BackColor = System.Drawing.SystemColors.Control
         Me.PictureBox.Location = New System.Drawing.Point(169, 88)
         Me.PictureBox.Name = "PictureBox"
-        Me.PictureBox.Size = New System.Drawing.Size(838, 805)
+        Me.PictureBox.Size = New System.Drawing.Size(802, 772)
         Me.PictureBox.TabIndex = 0
         Me.PictureBox.TabStop = False
         '
