@@ -46,7 +46,7 @@ Partial Class EtchASketchForm
         Me.PictureBox.BackColor = System.Drawing.SystemColors.Control
         Me.PictureBox.Location = New System.Drawing.Point(169, 88)
         Me.PictureBox.Name = "PictureBox"
-        Me.PictureBox.Size = New System.Drawing.Size(867, 664)
+        Me.PictureBox.Size = New System.Drawing.Size(838, 805)
         Me.PictureBox.TabIndex = 0
         Me.PictureBox.TabStop = False
         '
@@ -57,7 +57,7 @@ Partial Class EtchASketchForm
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(1267, 42)
+        Me.MenuStrip.Size = New System.Drawing.Size(1274, 48)
         Me.MenuStrip.TabIndex = 1
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -153,7 +153,7 @@ Partial Class EtchASketchForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Red
-        Me.ClientSize = New System.Drawing.Size(1267, 842)
+        Me.ClientSize = New System.Drawing.Size(1274, 946)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.DrawWaveformsButton)

@@ -23,11 +23,12 @@ Public Class EtchASketchForm
         End If
         Me.currentX = e.X
         Me.currentY = e.Y
+        Me.Text = $"({e.X},{e.Y}) Button:{e.Button}"
     End Sub
 
     Sub DrawLine(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer)
         Dim g As Graphics = PictureBox.CreateGraphics
-        Dim pen As New Pen(Me.currentColor) 'Pen(Color.FromArgb(255, 0, 0, 0))
+        Dim pen As New Pen(Me.currentColor)
         g.DrawLine(pen, x1, y1, x2, y2)
         pen.Dispose()
         g.Dispose()
@@ -88,5 +89,26 @@ Draw on the gray box by pressing the left mouse button.
 Select a pen color by pressing the SelectColor button or by clicking the center mouse button.
 Erase the image by pressing the Clear button.
 Have fun!")
+    End Sub
+
+    Private Sub DrawWaveformsButton_Click(sender As Object, e As EventArgs) Handles DrawWaveformsButton.Click
+        Dim g As Graphics = PictureBox.CreateGraphics
+        Dim pen As New Pen(Me.currentColor)
+        Dim previousX As Integer = 0
+        Dim previousY As Integer = 0
+        currentX = 1
+        currentY = 1
+        For i = 0 To 200
+            g.DrawLine(pen, previousX, previousY, currentX, currentY)
+            previousX += 1
+            previousY += 1
+            currentX += 1
+            currentY += 1
+        Next
+
+
+
+        pen.Dispose()
+        g.Dispose()
     End Sub
 End Class
