@@ -17,7 +17,6 @@ Public Class EtchASketchForm
     End Sub
 
     Private Sub PictureBox_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox.MouseMove
-
         If e.Button.ToString = "Left" Then
             DrawLine(Me.currentX, Me.currentY, e.X, e.Y)
         End If
@@ -110,7 +109,6 @@ Have fun!")
         previousY = 200
         currentX = 1
         pen.Color = Color.White
-
         For i = 0 To 399
             currentY = 200 + CInt(200 * Math.Cos(2 * pi * 0.01 * currentX))
             g.DrawLine(pen, previousX, previousY, currentX, currentY)
@@ -123,7 +121,6 @@ Have fun!")
         previousY = 200
         currentX = 1
         pen.Color = Color.Orange
-
         For i = 0 To 399
             currentY = 200 + CInt(200 * Math.Sin(2 * pi * 0.01 * currentX))
             g.DrawLine(pen, previousX + 25, previousY, currentX + 25, currentY)
@@ -131,7 +128,6 @@ Have fun!")
             previousY = currentY
             currentX += 1
         Next
-
         pen.Dispose()
         g.Dispose()
     End Sub
