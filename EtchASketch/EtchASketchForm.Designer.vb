@@ -157,9 +157,11 @@ Partial Class EtchASketchForm
         '
         'EtchASketchForm
         '
+        Me.AcceptButton = Me.DrawWaveformsButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Red
+        Me.CancelButton = Me.ExitButton
         Me.ClientSize = New System.Drawing.Size(1274, 946)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.ClearButton)
