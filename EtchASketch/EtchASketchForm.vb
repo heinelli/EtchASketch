@@ -96,9 +96,21 @@ Have fun!")
         Dim previousX As Integer = 0
         Dim previousY As Integer = 209
         Dim pi As Double = 3.14159265
+        Dim grid As Integer = 40
+
+        pen.Width = 2.0F
+        pen.Color = Color.Black
+        For i = 0 To 8
+            g.DrawLine(pen, grid, 0, grid, 400)
+            g.DrawLine(pen, 0, grid, 400, grid)
+            grid += 40
+        Next
+
+        pen.Color = Color.Red
+        pen.Width = 4.0F
         currentX = 1
         For i = 0 To 399
-            currentY = 200 + CInt(200 * Math.Sin(2 * pi * 0.01 * currentX))
+            currentY = 200 + (-1 * CInt(200 * Math.Sin(2 * pi * 0.005 * currentX)))
             g.DrawLine(pen, previousX, previousY, currentX, currentY)
             previousX = currentX
             previousY = currentY
@@ -110,7 +122,7 @@ Have fun!")
         currentX = 1
         pen.Color = Color.White
         For i = 0 To 399
-            currentY = 200 + CInt(200 * Math.Cos(2 * pi * 0.01 * currentX))
+            currentY = 200 + CInt(200 * Math.Cos(2 * pi * 0.005 * currentX))
             g.DrawLine(pen, previousX, previousY, currentX, currentY)
             previousX = currentX
             previousY = currentY
@@ -122,12 +134,16 @@ Have fun!")
         currentX = 1
         pen.Color = Color.Orange
         For i = 0 To 399
-            currentY = 200 + CInt(200 * Math.Sin(2 * pi * 0.01 * currentX))
-            g.DrawLine(pen, previousX + 25, previousY, currentX + 25, currentY)
+            currentY = 200 + CInt(200 * Math.Sin(2 * pi * 0.005 * currentX))
+            g.DrawLine(pen, previousX, previousY, currentX, currentY)
             previousX = currentX
             previousY = currentY
             currentX += 1
         Next
+
+
+
+
         pen.Dispose()
         g.Dispose()
     End Sub
