@@ -24,7 +24,6 @@ Public Class EtchASketchForm
         End If
         Me.currentX = e.X
         Me.currentY = e.Y
-        Me.Text = $"({e.X},{e.Y}) Button:{e.Button}"
     End Sub
 
     Sub DrawLine(x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer)
